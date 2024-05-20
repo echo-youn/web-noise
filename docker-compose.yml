@@ -1,0 +1,15 @@
+services:
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      - USERNAME=echo
+      - PASSWOD=PASSWORD
+    volumes:
+      - database-v:/var/lib/mariadb/dbfile/path
+  app:
+    image: my-app
+    restart: always
+
+volumes:
+  database-v:
